@@ -1,0 +1,30 @@
+README - camlgphoto2
+------------------------------
+
+camlgphoto2 est une interface à la bibliothèque libgphoto2 pour le langage de 
+programmation Objective Caml (OCaml).
+
+1. Organisation du code source
+------------------------------
+
+  GPAbilities                         Propriétés d'un APN.
+  GPCamera                            Manipulation d'un APN.
+  GPContext                           Contexte.
+  GPFile                              Manipulation des fichiers.
+  GPMain                              Module principal.
+  GPPortInfo                          Port utilisé par un APN.
+  GPWidget                            Configuration d'un APN.
+  wrap-gphoto2-abilities-list.c       Interface pour gphoto2-abilities-list.h
+  wrap-gphoto2-camera.c               Interface pour gphoto2-camera.h
+  wrap-gphoto2-camerafile.c           Interface pour gphoto2-file.h
+  wrap-gphoto2-context.c              Interface pour gphoto2-context.h
+  wrap-gphoto2-port-info-list.c       Interface pour gphoto2-port-info-list.h
+  wrap-header.c                       Useful stuff (mainly macros)
+
+2. Utilisation
+------------------------------
+
+In order use camlgphoto2, you may run :
+
+  - for bytecode: ocamlc camlgphoto2.cma foo.ml -o foo
+  - for native code: ocamlopt camlgphoto2.cmxa foo.ml -o foo

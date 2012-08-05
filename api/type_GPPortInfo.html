@@ -1,0 +1,29 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="GPAbilities" rel="Chapter" href="GPAbilities.html">
+<link title="GPCamera" rel="Chapter" href="GPCamera.html">
+<link title="GPContext" rel="Chapter" href="GPContext.html">
+<link title="GPFile" rel="Chapter" href="GPFile.html">
+<link title="GPFileInfo" rel="Chapter" href="GPFileInfo.html">
+<link title="GPMain" rel="Chapter" href="GPMain.html">
+<link title="GPPortInfo" rel="Chapter" href="GPPortInfo.html">
+<link title="GPWidget" rel="Chapter" href="GPWidget.html"><title>camlgphoto2 : GPPortInfo</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;port_type&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GP_PORT_NONE</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">GP_PORT_SERIAL</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">GP_PORT_USB</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">GP_PORT_DISK</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">GP_PORT_PTPIP</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;get_type&nbsp;:&nbsp;<span class="constructor">GPPortInfo</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">GPPortInfo</span>.port_type<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;get_name&nbsp;:&nbsp;<span class="constructor">GPPortInfo</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;get_path&nbsp;:&nbsp;<span class="constructor">GPPortInfo</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+<span class="keyword">end</span></code></body></html>

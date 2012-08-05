@@ -1,0 +1,44 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="GPAbilities" rel="Chapter" href="GPAbilities.html">
+<link title="GPCamera" rel="Chapter" href="GPCamera.html">
+<link title="GPContext" rel="Chapter" href="GPContext.html">
+<link title="GPFile" rel="Chapter" href="GPFile.html">
+<link title="GPFileInfo" rel="Chapter" href="GPFileInfo.html">
+<link title="GPMain" rel="Chapter" href="GPMain.html">
+<link title="GPPortInfo" rel="Chapter" href="GPPortInfo.html">
+<link title="GPWidget" rel="Chapter" href="GPWidget.html"><title>camlgphoto2 : GPFile</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;kind&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">FT_PREVIEW</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FT_NORMAL</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FT_RAW</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FT_AUDIO</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FT_EXIF</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FT_METADATA</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;create&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">GPFile</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;from_file_descr&nbsp;:&nbsp;<span class="constructor">Unix</span>.file_descr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">GPFile</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;load&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">GPFile</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;clean&nbsp;:&nbsp;<span class="constructor">GPFile</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;copy&nbsp;:&nbsp;<span class="constructor">GPFile</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">GPFile</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;save&nbsp;:&nbsp;<span class="constructor">GPFile</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;get_name&nbsp;:&nbsp;<span class="constructor">GPFile</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;set_name&nbsp;:&nbsp;<span class="constructor">GPFile</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;get_mime_type&nbsp;:&nbsp;<span class="constructor">GPFile</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;set_mime_type&nbsp;:&nbsp;<span class="constructor">GPFile</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;get_mtime&nbsp;:&nbsp;<span class="constructor">GPFile</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;set_mtime&nbsp;:&nbsp;<span class="constructor">GPFile</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;detect_mime_type&nbsp;:&nbsp;<span class="constructor">GPFile</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;adjust_name_for_mime_type&nbsp;:&nbsp;<span class="constructor">GPFile</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;incr_ref&nbsp;:&nbsp;<span class="constructor">GPFile</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;decr_ref&nbsp;:&nbsp;<span class="constructor">GPFile</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;destroy&nbsp;:&nbsp;<span class="constructor">GPFile</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+<span class="keyword">end</span></code></body></html>

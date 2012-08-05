@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="GPPortInfo.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="GPAbilities" rel="Chapter" href="GPAbilities.html">
+<link title="GPCamera" rel="Chapter" href="GPCamera.html">
+<link title="GPContext" rel="Chapter" href="GPContext.html">
+<link title="GPFile" rel="Chapter" href="GPFile.html">
+<link title="GPFileInfo" rel="Chapter" href="GPFileInfo.html">
+<link title="GPMain" rel="Chapter" href="GPMain.html">
+<link title="GPPortInfo" rel="Chapter" href="GPPortInfo.html">
+<link title="GPWidget" rel="Chapter" href="GPWidget.html"><link title="Widget parameters" rel="Section" href="#2_Widgetparameters">
+<link title="Reference counting" rel="Section" href="#2_Referencecounting">
+<link title="Dealing with widget hierarchy" rel="Subsection" href="#5_Dealingwithwidgethierarchy">
+<link title="Widget info" rel="Subsection" href="#5_Widgetinfo">
+<link title="Widget name" rel="Subsection" href="#5_Widgetname">
+<link title="Widget value" rel="Subsection" href="#5_Widgetvalue">
+<link title="Other info" rel="Subsection" href="#5_Otherinfo">
+<title>camlgphoto2 : GPWidget</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="GPPortInfo.html" title="GPPortInfo">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_GPWidget.html">GPWidget</a></h1>
+<pre><span class="keyword">module</span> GPWidget: <code class="code"><span class="keyword">sig</span></code> <a href="GPWidget.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>Camera widgets.<br>
+<hr width="100%">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+<div class="info">
+The type of camera widgets.<br>
+</div>
+
+<pre><span id="TYPEwidget_id"><span class="keyword">type</span> <code class="type"></code>widget_id</span> </pre>
+<div class="info">
+The type of camera widget unique id.<br>
+</div>
+
+<pre><span id="TYPEwidget_name"><span class="keyword">type</span> <code class="type"></code>widget_name</span> = <code class="type">string</code> </pre>
+<div class="info">
+Type of camera widget name.<br>
+</div>
+
+<pre><span id="TYPEwidget_label"><span class="keyword">type</span> <code class="type"></code>widget_label</span> = <code class="type">string</code> </pre>
+<div class="info">
+Type of camera widget label.<br>
+</div>
+
+<pre><code><span id="TYPEwidget_type"><span class="keyword">type</span> <code class="type"></code>widget_type</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwidget_type.GP_WIDGET_WINDOW"><span class="constructor">GP_WIDGET_WINDOW</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Toplevel configuration widget.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwidget_type.GP_WIDGET_SECTION"><span class="constructor">GP_WIDGET_SECTION</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Section widget (tab).</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwidget_type.GP_WIDGET_TEXT"><span class="constructor">GP_WIDGET_TEXT</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Text widget (string).</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwidget_type.GP_WIDGET_RANGE"><span class="constructor">GP_WIDGET_RANGE</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Slider widget (float).</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwidget_type.GP_WIDGET_TOGGLE"><span class="constructor">GP_WIDGET_TOGGLE</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Toggle widget (check box).</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwidget_type.GP_WIDGET_RADIO"><span class="constructor">GP_WIDGET_RADIO</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Radio button widget.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwidget_type.GP_WIDGET_MENU"><span class="constructor">GP_WIDGET_MENU</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Menu widget (same as above).</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwidget_type.GP_WIDGET_BUTTON"><span class="constructor">GP_WIDGET_BUTTON</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Button press widget.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwidget_type.GP_WIDGET_DATE"><span class="constructor">GP_WIDGET_DATE</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Date entering widget.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+
+<div class="info">
+The actual widget type we want to create. The type of the value it supports 
+ depends on this type.<br>
+</div>
+
+<pre><span id="VALstring_of_type"><span class="keyword">val</span> string_of_type</span> : <code class="type"><a href="GPWidget.html#TYPEwidget_type">widget_type</a> -> string</code></pre><div class="info">
+<b>Returns</b> the string representation of the given camera widget type.<br>
+</div>
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="GPWidget.html#TYPEwidget_type">widget_type</a> -> label:string -> <a href="GPWidget.html#TYPEt">t</a></code></pre><div class="info">
+Creates a new camera widget of specified type and with given label.<br>
+</div>
+<pre><span id="VALdestroy"><span class="keyword">val</span> destroy</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> unit</code></pre><div class="info">
+Frees the camera widget.<br>
+</div>
+<br>
+<span id="2_Widgetparameters"><h2>Widget parameters</h2></span>
+ Use the functions below to get/set camera widget parameters.<br>
+<br>
+<span id="5_Dealingwithwidgethierarchy"><h5>Dealing with widget hierarchy</h5></span><br>
+<pre><span id="VALcount_children"><span class="keyword">val</span> count_children</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> int</code></pre><div class="info">
+Counts the children of the given camera widget.<br>
+</div>
+<pre><span id="VALis_parent"><span class="keyword">val</span> is_parent</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+Returns <code class="code"><span class="keyword">true</span></code> if the given camera widget has one child at least, <code class="code"><span class="keyword">false</span></code>
+ otherwise.<br>
+</div>
+<pre><span id="VALget_nth_child"><span class="keyword">val</span> get_nth_child</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> int -> <a href="GPWidget.html#TYPEt">t</a></code></pre><div class="info">
+Retrieves the nth child of the given camera widget.<br>
+</div>
+<pre><span id="VALget_children"><span class="keyword">val</span> get_children</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> <a href="GPWidget.html#TYPEt">t</a> list</code></pre><div class="info">
+Retrieves all the children of the given camera widget.<br>
+</div>
+<pre><span id="VALget_parent"><span class="keyword">val</span> get_parent</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> <a href="GPWidget.html#TYPEt">t</a></code></pre><div class="info">
+Retrieves the parent of the given camera widget.<br>
+</div>
+<pre><span id="VALget_root"><span class="keyword">val</span> get_root</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> <a href="GPWidget.html#TYPEt">t</a></code></pre><div class="info">
+Retrieves the root camera widget.<br>
+</div>
+<pre><span id="VALget_child_by_label"><span class="keyword">val</span> get_child_by_label</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> <a href="GPWidget.html#TYPEwidget_label">widget_label</a> -> <a href="GPWidget.html#TYPEt">t</a></code></pre><div class="info">
+Retrieves the child of a camera widget given its label.
+<br>
+<b>Raises</b> <code>Not_found</code> if no child is associated with the given label.<br>
+</div>
+<pre><span id="VALget_child_by_id"><span class="keyword">val</span> get_child_by_id</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> <a href="GPWidget.html#TYPEwidget_id">widget_id</a> -> <a href="GPWidget.html#TYPEt">t</a></code></pre><div class="info">
+Retrieves the child of a camera widget given its unique id.
+<br>
+<b>Raises</b> <code>Not_found</code> if no child is associated with the given id.<br>
+</div>
+<pre><span id="VALget_child_by_name"><span class="keyword">val</span> get_child_by_name</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> <a href="GPWidget.html#TYPEwidget_name">widget_name</a> -> <a href="GPWidget.html#TYPEt">t</a></code></pre><div class="info">
+Retrieves the child of a camera widget given its name.
+<br>
+<b>Raises</b> <code>Not_found</code> if no child is associated with the given name.<br>
+</div>
+<br>
+<span id="5_Widgetinfo"><h5>Widget info</h5></span><br>
+<pre><span id="VALget_info"><span class="keyword">val</span> get_info</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> string</code></pre><div class="info">
+Retrieves the information about the given camera widget.<br>
+</div>
+<pre><span id="VALset_info"><span class="keyword">val</span> set_info</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> string -> unit</code></pre><div class="info">
+Sets the information about the given camera widget.<br>
+</div>
+<br>
+<span id="5_Widgetname"><h5>Widget name</h5></span><br>
+<pre><span id="VALget_name"><span class="keyword">val</span> get_name</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> <a href="GPWidget.html#TYPEwidget_name">widget_name</a></code></pre><div class="info">
+Gets the name of the given camera widget.<br>
+</div>
+<pre><span id="VALset_name"><span class="keyword">val</span> set_name</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> <a href="GPWidget.html#TYPEwidget_name">widget_name</a> -> unit</code></pre><div class="info">
+Sets the name of the given camera widget.<br>
+</div>
+<br>
+<span id="5_Widgetvalue"><h5>Widget value</h5></span><br>
+<pre><code><span id="TYPEwidget_value"><span class="keyword">type</span> <code class="type"></code>widget_value</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwidget_value.GP_VALUE_OTHER"><span class="constructor">GP_VALUE_OTHER</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Unsupported value.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwidget_value.GP_VALUE_INT"><span class="constructor">GP_VALUE_INT</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Integer.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwidget_value.GP_VALUE_FLOAT"><span class="constructor">GP_VALUE_FLOAT</span></span> <span class="keyword">of</span> <code class="type">float</code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Floating-point number.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTwidget_value.GP_VALUE_STRING"><span class="constructor">GP_VALUE_STRING</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Character string.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+
+<div class="info">
+The type of widget value.<br>
+</div>
+
+<pre><span id="VALstring_of_value"><span class="keyword">val</span> string_of_value</span> : <code class="type"><a href="GPWidget.html#TYPEwidget_value">widget_value</a> -> string</code></pre><div class="info">
+Returns the string representation of the given widget value.<br>
+</div>
+<pre><span id="VALget_value"><span class="keyword">val</span> get_value</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> <a href="GPWidget.html#TYPEwidget_value">widget_value</a></code></pre><div class="info">
+Retrieves the value of the given camera widget.<br>
+</div>
+<pre><span id="VALset_value"><span class="keyword">val</span> set_value</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> <a href="GPWidget.html#TYPEwidget_value">widget_value</a> -> unit</code></pre><div class="info">
+Modifies the value of the given camera widget.<br>
+</div>
+<pre><span id="VALget_choices"><span class="keyword">val</span> get_choices</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> (string * int) list</code></pre><div class="info">
+Retrieves the available choices for the given camera widget.
+<br>
+<b>Raises</b> <code>Invalid_argument</code> if the widget type is not <code class="code"><span class="constructor">GP_WIDGET_MENU</span></code> or
+ <code class="code"><span class="constructor">GP_WIDGET_RADIO</span></code>.<br>
+</div>
+<br>
+<span id="5_Otherinfo"><h5>Other info</h5></span><br>
+<pre><span id="VALis_read_only"><span class="keyword">val</span> is_read_only</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+Retrieves the read/write state of the given camera widget.<br>
+</div>
+<pre><span id="VALget_label"><span class="keyword">val</span> get_label</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> <a href="GPWidget.html#TYPEwidget_label">widget_label</a></code></pre><div class="info">
+Retrieves the label of the given camera widget.<br>
+</div>
+<pre><span id="VALget_id"><span class="keyword">val</span> get_id</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> <a href="GPWidget.html#TYPEwidget_id">widget_id</a></code></pre><div class="info">
+Retrieves the unique id of the given camera widget.<br>
+</div>
+<pre><span id="VALget_type"><span class="keyword">val</span> get_type</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> <a href="GPWidget.html#TYPEwidget_type">widget_type</a></code></pre><div class="info">
+Retrieves the type of the given camera widget.<br>
+</div>
+<br>
+<span id="2_Referencecounting"><h2>Reference counting</h2></span><br>
+<pre><span id="VALincr_ref"><span class="keyword">val</span> incr_ref</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALdecr_ref"><span class="keyword">val</span> decr_ref</span> : <code class="type"><a href="GPWidget.html#TYPEt">t</a> -> unit</code></pre></body></html>

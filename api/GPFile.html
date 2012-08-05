@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="GPContext.html">
+<link rel="next" href="GPFileInfo.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="GPAbilities" rel="Chapter" href="GPAbilities.html">
+<link title="GPCamera" rel="Chapter" href="GPCamera.html">
+<link title="GPContext" rel="Chapter" href="GPContext.html">
+<link title="GPFile" rel="Chapter" href="GPFile.html">
+<link title="GPFileInfo" rel="Chapter" href="GPFileInfo.html">
+<link title="GPMain" rel="Chapter" href="GPMain.html">
+<link title="GPPortInfo" rel="Chapter" href="GPPortInfo.html">
+<link title="GPWidget" rel="Chapter" href="GPWidget.html"><link title="Creating, copying and saving files" rel="Section" href="#2_Creatingcopyingandsavingfiles">
+<link title="Getters/setters" rel="Section" href="#2_Getterssetters">
+<link title="Reference counting" rel="Section" href="#2_Referencecounting">
+<title>camlgphoto2 : GPFile</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="GPContext.html" title="GPContext">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="GPFileInfo.html" title="GPFileInfo">Next</a>
+</div>
+<h1>Module <a href="type_GPFile.html">GPFile</a></h1>
+<pre><span class="keyword">module</span> GPFile: <code class="code"><span class="keyword">sig</span></code> <a href="GPFile.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>Camera file-related functions.<br>
+<hr width="100%">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+<div class="info">
+The type of camera files.<br>
+</div>
+
+<pre><code><span id="TYPEkind"><span class="keyword">type</span> <code class="type"></code>kind</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTkind.FT_PREVIEW"><span class="constructor">FT_PREVIEW</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >A preview of an image.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTkind.FT_NORMAL"><span class="constructor">FT_NORMAL</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >The regular normal data of a file.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTkind.FT_RAW"><span class="constructor">FT_RAW</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >The raw mode of a file (usually not for modern DSLRs).</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTkind.FT_AUDIO"><span class="constructor">FT_AUDIO</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >The audio view of a file.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTkind.FT_EXIF"><span class="constructor">FT_EXIF</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >The embedded EXIF data of an image.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTkind.FT_METADATA"><span class="constructor">FT_METADATA</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >The metadata of a file.</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+
+<div class="info">
+Specifies the kind of the current file, usually passed to the <code class="code">get</code> and 
+ <code class="code">put</code> functions. This is useful for multiple views of one file, like that an
+ single image file has "raw", "normal", "exif" and "preview" views, or a 
+ media file has "normal" and "metadata" file views.<br>
+</div>
+
+<br>
+<span id="2_Creatingcopyingandsavingfiles"><h2>Creating, copying and saving files</h2></span><br>
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -> <a href="GPFile.html#TYPEt">t</a></code></pre><div class="info">
+Creates a new camera file.<br>
+</div>
+<pre><span id="VALfrom_file_descr"><span class="keyword">val</span> from_file_descr</span> : <code class="type">Unix.file_descr -> <a href="GPFile.html#TYPEt">t</a></code></pre><div class="info">
+Creates a new camera file from the given file descriptor.<br>
+</div>
+<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">string -> <a href="GPFile.html#TYPEt">t</a></code></pre><div class="info">
+Loads the given camera file.
+ Warning: the current implementation does not restrict the range of loadable
+ files. Please make sure that you are loading pictures!<br>
+</div>
+<pre><span id="VALclean"><span class="keyword">val</span> clean</span> : <code class="type"><a href="GPFile.html#TYPEt">t</a> -> unit</code></pre><div class="info">
+Frees the camera file components, not the file itself, preparing it for 
+ being filled with new data.<br>
+</div>
+<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type"><a href="GPFile.html#TYPEt">t</a> -> <a href="GPFile.html#TYPEt">t</a></code></pre><div class="info">
+Returns a copy of the given camera file.<br>
+</div>
+<pre><span id="VALsave"><span class="keyword">val</span> save</span> : <code class="type"><a href="GPFile.html#TYPEt">t</a> -> string -> unit</code></pre><div class="info">
+<code class="code">saves caf name</code> saves camera file <code class="code">caf</code> as <code class="code">name</code>.<br>
+</div>
+<br>
+<span id="2_Getterssetters"><h2>Getters/setters</h2></span> 
+ Warning: libgphoto2 developers said these functions will be removed in the 
+ future.<br>
+<pre><span id="VALget_name"><span class="keyword">val</span> get_name</span> : <code class="type"><a href="GPFile.html#TYPEt">t</a> -> string</code></pre><div class="info">
+<b>Returns</b> the camera file name.<br>
+</div>
+<pre><span id="VALset_name"><span class="keyword">val</span> set_name</span> : <code class="type"><a href="GPFile.html#TYPEt">t</a> -> string -> unit</code></pre><div class="info">
+Changes the camera file name.<br>
+</div>
+<pre><span id="VALget_mime_type"><span class="keyword">val</span> get_mime_type</span> : <code class="type"><a href="GPFile.html#TYPEt">t</a> -> string</code></pre><div class="info">
+<b>Returns</b> the camera file MIME type.<br>
+</div>
+<pre><span id="VALset_mime_type"><span class="keyword">val</span> set_mime_type</span> : <code class="type"><a href="GPFile.html#TYPEt">t</a> -> string -> unit</code></pre><div class="info">
+Changes the camera file mime type.<br>
+</div>
+<pre><span id="VALget_mtime"><span class="keyword">val</span> get_mtime</span> : <code class="type"><a href="GPFile.html#TYPEt">t</a> -> float</code></pre><div class="info">
+<b>Returns</b> the camera file modification time.<br>
+</div>
+<pre><span id="VALset_mtime"><span class="keyword">val</span> set_mtime</span> : <code class="type"><a href="GPFile.html#TYPEt">t</a> -> float -> unit</code></pre><div class="info">
+Changes the camera file modification time.<br>
+</div>
+<pre><span id="VALdetect_mime_type"><span class="keyword">val</span> detect_mime_type</span> : <code class="type"><a href="GPFile.html#TYPEt">t</a> -> unit</code></pre><div class="info">
+Look for camera file mime type.<br>
+</div>
+<pre><span id="VALadjust_name_for_mime_type"><span class="keyword">val</span> adjust_name_for_mime_type</span> : <code class="type"><a href="GPFile.html#TYPEt">t</a> -> unit</code></pre><div class="info">
+Adjusts the camera file name to fit its actual MIME type.<br>
+</div>
+<br>
+<span id="2_Referencecounting"><h2>Reference counting</h2></span><br>
+<pre><span id="VALincr_ref"><span class="keyword">val</span> incr_ref</span> : <code class="type"><a href="GPFile.html#TYPEt">t</a> -> unit</code></pre><div class="info">
+Increments the reference count of the camera file.<br>
+</div>
+<pre><span id="VALdecr_ref"><span class="keyword">val</span> decr_ref</span> : <code class="type"><a href="GPFile.html#TYPEt">t</a> -> unit</code></pre><div class="info">
+Decrements the reference count of the camera file.<br>
+</div>
+<pre><span id="VALdestroy"><span class="keyword">val</span> destroy</span> : <code class="type"><a href="GPFile.html#TYPEt">t</a> -> unit</code></pre><div class="info">
+Destroys the given camera file.
+ Do not reuse the given value after calling this function!<br>
+</div>
+</body></html>

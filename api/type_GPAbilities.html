@@ -1,0 +1,47 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="GPAbilities" rel="Chapter" href="GPAbilities.html">
+<link title="GPCamera" rel="Chapter" href="GPCamera.html">
+<link title="GPContext" rel="Chapter" href="GPContext.html">
+<link title="GPFile" rel="Chapter" href="GPFile.html">
+<link title="GPFileInfo" rel="Chapter" href="GPFileInfo.html">
+<link title="GPMain" rel="Chapter" href="GPMain.html">
+<link title="GPPortInfo" rel="Chapter" href="GPPortInfo.html">
+<link title="GPWidget" rel="Chapter" href="GPWidget.html"><title>camlgphoto2 : GPAbilities</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;driver_status&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GP_DRIVER_STATUS_PRODUCTION</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">GP_DRIVER_STATUS_TESTING</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">GP_DRIVER_STATUS_EXPERIMENTAL</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">GP_DRIVER_STATUS_DEPRECATED</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;get_status&nbsp;:&nbsp;<span class="constructor">GPAbilities</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">GPAbilities</span>.driver_status<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;device_type&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">GP_DEVICE_TYPE_STILL_CAMERA</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">GP_DEVICE_TYPE_AUDIO_PLAYER</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;get_device_type&nbsp;:&nbsp;<span class="constructor">GPAbilities</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">GPAbilities</span>.device_type<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;camera_operation&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">CO_CAPTURE_IMAGE</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">CO_CAPTURE_VIDEO</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">CO_CAPTURE_AUDIO</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">CO_CAPTURE_PREVIEW</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">CO_CONFIG</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;camera_file_operation&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">FO_DELETE</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FO_PREVIEW</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FO_RAW</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FO_AUDIO</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">FO_EXIF</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;camera_directory_operation&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">DO_DELETE_ALL</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">DO_PUT_FILE</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">DO_MAKE_DIR</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">DO_REMOVE_DIR</span><br>
+<span class="keyword">end</span></code></body></html>

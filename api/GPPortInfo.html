@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="GPMain.html">
+<link rel="next" href="GPWidget.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="GPAbilities" rel="Chapter" href="GPAbilities.html">
+<link title="GPCamera" rel="Chapter" href="GPCamera.html">
+<link title="GPContext" rel="Chapter" href="GPContext.html">
+<link title="GPFile" rel="Chapter" href="GPFile.html">
+<link title="GPFileInfo" rel="Chapter" href="GPFileInfo.html">
+<link title="GPMain" rel="Chapter" href="GPMain.html">
+<link title="GPPortInfo" rel="Chapter" href="GPPortInfo.html">
+<link title="GPWidget" rel="Chapter" href="GPWidget.html"><title>camlgphoto2 : GPPortInfo</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="GPMain.html" title="GPMain">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="GPWidget.html" title="GPWidget">Next</a>
+</div>
+<h1>Module <a href="type_GPPortInfo.html">GPPortInfo</a></h1>
+<pre><span class="keyword">module</span> GPPortInfo: <code class="code"><span class="keyword">sig</span></code> <a href="GPPortInfo.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>Port info related functions.<br>
+<hr width="100%">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+<div class="info">
+The type of port info.<br>
+</div>
+
+<pre><code><span id="TYPEport_type"><span class="keyword">type</span> <code class="type"></code>port_type</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTport_type.GP_PORT_NONE"><span class="constructor">GP_PORT_NONE</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTport_type.GP_PORT_SERIAL"><span class="constructor">GP_PORT_SERIAL</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTport_type.GP_PORT_USB"><span class="constructor">GP_PORT_USB</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTport_type.GP_PORT_DISK"><span class="constructor">GP_PORT_DISK</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTport_type.GP_PORT_PTPIP"><span class="constructor">GP_PORT_PTPIP</span></span></code></td>
+
+</tr></table>
+
+
+<pre><span id="VALget_type"><span class="keyword">val</span> get_type</span> : <code class="type"><a href="GPPortInfo.html#TYPEt">t</a> -> <a href="GPPortInfo.html#TYPEport_type">port_type</a></code></pre><div class="info">
+<b>Returns</b> the type of the given port.<br>
+</div>
+<pre><span id="VALget_name"><span class="keyword">val</span> get_name</span> : <code class="type"><a href="GPPortInfo.html#TYPEt">t</a> -> string</code></pre><div class="info">
+<b>Returns</b> the name (for instance <code class="code"><span class="string">"usb:"</span></code>) of the given port.<br>
+</div>
+<pre><span id="VALget_path"><span class="keyword">val</span> get_path</span> : <code class="type"><a href="GPPortInfo.html#TYPEt">t</a> -> string</code></pre><div class="info">
+<b>Returns</b> the path (whatever is after the <code class="code">:</code>) of the given port.<br>
+</div>
+</body></html>
