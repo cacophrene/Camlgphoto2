@@ -1,9 +1,0 @@
-HOW TO INSTALL CAMLGPHOTO2
-------------------------------
-
-Just run build.sh with admin account.
-The script will compile the camlgphoto2 binding for libgphoto2 library 
-and install it in $(ocamlc -where)/camlgphoto2. 
-Then it will compile the application camlgphoto2.
-
-That's all!
